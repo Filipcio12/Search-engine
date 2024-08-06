@@ -1,4 +1,4 @@
-from models import ScrapingResult
+from .models import ScrapingResult
 
 import requests
 from bs4 import BeautifulSoup
@@ -13,7 +13,7 @@ class Crawler:
         except:
             return
 
-        content = BeautifulSoup(response.text, 'lxml')
+        content = BeautifulSoup(response.text, 'html.parser')
         try:
             title = content.find('title').text
             page_content = ''
