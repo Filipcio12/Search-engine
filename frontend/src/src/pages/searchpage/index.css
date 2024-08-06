@@ -1,0 +1,15 @@
+.search-page {
+    padding: 20px;
+}
+
+.bg-dark {
+    background-color: #131313 !important;
+}
+
+.text-white {
+    color: #fff !important;
+}
+
+.ms-3 {
+    margin-left: 1rem;
+}

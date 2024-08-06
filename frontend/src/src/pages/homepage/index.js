@@ -1,7 +1,7 @@
-import './index.css'
+import './index.css';
 
-import SearchBar from "../../components/search-bar";
-import logo from '../../chopchopgo.png'
+import SearchBar from '../../components/search-bar';
+import logo from '../../chopchopgo.png';
 
 export default function Homepage() {
     return (

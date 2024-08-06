@@ -1,11 +1,12 @@
 import './App.css';
-import UrlCard from './components/url-card';
+
 import Homepage from './pages/homepage';
+import SearchPage from './pages/searchpage';
 
 function App() {
   return (
     <div className="App">
-      <UrlCard/>
+      <SearchPage/>
     </div>
   );
 }
