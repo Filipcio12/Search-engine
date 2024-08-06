@@ -1,38 +1,43 @@
-.App {
-  text-align: center;
+/* index.css or your main CSS file */
+body {
+  background-color: #1d1d1d; /* Dark background color */
+  color: #e5e5e5; /* Light text color */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Additional styles to ensure readability and contrast */
+.container {
+  padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  color: #4285f4; /* Adjust link color for better contrast */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff; /* Ensure headings stand out */
 }
 
-.App-link {
-  color: #61dafb;
+button, input, select, textarea {
+  background-color: #333333; /* Darker backgrounds for inputs */
+  color: #e5e5e5; /* Light text color for inputs */
+  border: 1px solid #555555;
+  border-radius: 4px;
+  padding: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover, input:focus, select:focus, textarea:focus {
+  background-color: #444444; /* Slightly lighter on focus/hover */
+  border-color: #666666;
+  outline: none;
+}
+
+.navbar {
+  background-color: #222222; /* Dark navbar background */
+  color: #e5e5e5; /* Light text for the navbar */
+  padding: 10px;
+  border-bottom: 1px solid #333333;
 }

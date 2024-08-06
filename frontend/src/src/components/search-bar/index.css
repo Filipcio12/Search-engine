@@ -14,35 +14,46 @@
 .form-control {
     width: 100%;
     padding: 10px 20px;
-    border: 2px solid #ccc;
+    border: 2px solid #555555; /* Darker border */
     border-right: none;
     border-radius: 50px 0 0 50px;
     font-size: 16px;
-    transition: border-color 0.3s ease;
+    background-color: #333333; /* Dark background for input */
+    color: #e5e5e5; /* Light text color */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-control::placeholder {
+    color: #bbbbbb; /* Light grayish color for the placeholder text */
+    opacity: 1; /* Ensure full opacity for the placeholder */
 }
 
 .form-control:focus {
-    border-color: #4285f4;
+    border-color: #4285f4; /* Blue border on focus */
+    background-color: #444444; /* Slightly lighter background on focus */
     outline: none;
+    color: #e5e5e5; /* Light text color */
 }
 
 .search-btn {
     padding: 10px 20px;
-    border: 2px solid #ccc;
+    border: 2px solid #555555; /* Darker border */
     border-left: none;
     border-radius: 0 50px 50px 0;
-    background-color: #f8f9fa;
+    background-color: #555555; /* Dark background for button */
+    color: #e5e5e5; /* Light text color */
     cursor: pointer;
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .search-btn:hover {
-    background-color: #e2e6ea;
-    border-color: #4285f4;
+    background-color: #666666; /* Slightly lighter on hover */
+    border-color: #4285f4; /* Blue border on hover */
 }
 
 .bi-search {
     vertical-align: middle;
+    color: #e5e5e5; /* Ensure icon is visible in dark theme */
 }
 
 .search-btn:focus {
