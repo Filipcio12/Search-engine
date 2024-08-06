@@ -1,0 +1,39 @@
+.card {
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Ensure contents fit within rounded corners */
+}
+
+.card-logo {
+    width: 20px; /* Smaller size for the logo */
+    height: 20px; /* Maintain aspect ratio */
+}
+
+.card-link-text {
+    font-size: 12px; /* Smaller text size */
+    font-weight: 500; /* Slightly bold */
+    color: #b0b0b0; /* Grayish text color */
+    margin-bottom: 0; /* Remove margin to bring it closer to the title */
+}
+
+.card-title {
+    margin-top: 0;
+    margin-bottom: 0.2rem; /* Closer to the text */
+    color: #fff; /* White text color */
+    font-weight: bold; /* Make the title bold */
+}
+
+.card-title-link {
+    text-decoration: none;
+    color: inherit; /* Inherit the card title color */
+}
+
+.card-title-link:hover {
+    text-decoration: underline;
+}
+
+.card-text {
+    margin-bottom: 1rem;
+    color: #d0d0d0; /* Grayish text color */
+    font-size: 14px; /* Smaller text size */
+}
