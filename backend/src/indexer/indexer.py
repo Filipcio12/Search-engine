@@ -1,4 +1,5 @@
 import string
+import pickle
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -26,3 +27,17 @@ class Indexer():
         most_similar_docs = np.argsort(cosine_similarities)[::-1][:top_n]
         results = [(self.filenames[i], cosine_similarities[i]) for i in most_similar_docs]
         return results
+    
+    def save(self, filepath: str):
+        try:
+            with open(filepath, 'wb') as f:
+                pickle.dump(self, f)
+        except:
+            raise RuntimeError('ERROR: Could not save the indexer.')
+
+    def load(self, filepath: str):
+        try:
+            with open(filepath, 'rb') as f:
+                return pickle.load(f)
+        except:
+            raise RuntimeError('ERROR: Cound not load the indexer.')
