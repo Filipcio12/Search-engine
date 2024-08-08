@@ -26,7 +26,7 @@ class Command(BaseCommand):
             indexer.index_documents(documents, filenames)
             
             INDEXER_DIR = os.path.join(settings.BASE_DIR, 'index_data')
-            os.makedirs(INDEXER_DIR, exists_ok=True)
+            os.makedirs(INDEXER_DIR, exist_ok=True)
             indexer.save(os.path.join(INDEXER_DIR, 'indexer.pkl'))
 
             self.stdout.write(self.style.SUCCESS('Successfully indexed pages.'))
