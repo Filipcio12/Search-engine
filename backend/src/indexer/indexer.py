@@ -21,9 +21,9 @@ class Indexer():
         self.tfidf_matrix = self.vectorizer.fit_transform(processed_documents)
         self.filenames = filenames
 
-    def search(self, query, vectorizer, tfidf_matrix, top_n=5):
-        query_vec = vectorizer.transform([query])
-        cosine_similarities = cosine_similarity(query_vec, tfidf_matrix).flatten()
+    def search(self, query, top_n=5):
+        query_vec = self.vectorizer.transform([query])
+        cosine_similarities = cosine_similarity(query_vec, self.tfidf_matrix).flatten()
         most_similar_docs = np.argsort(cosine_similarities)[::-1][:top_n]
         results = [(self.filenames[i], cosine_similarities[i]) for i in most_similar_docs]
         return results
@@ -32,12 +32,12 @@ class Indexer():
         try:
             with open(filepath, 'wb') as f:
                 pickle.dump(self, f)
-        except:
-            raise RuntimeError('ERROR: Could not save the indexer.')
+        except Exception as e:
+            raise RuntimeError(f'ERROR: {str(e)}')
 
     def load(self, filepath: str):
         try:
             with open(filepath, 'rb') as f:
                 return pickle.load(f)
-        except:
-            raise RuntimeError('ERROR: Cound not load the indexer.')
+        except Exception as e:
+            raise RuntimeError(f'ERROR: {str(e)}')
