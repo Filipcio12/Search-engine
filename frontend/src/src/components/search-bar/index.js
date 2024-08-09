@@ -1,12 +1,23 @@
 import './index.css';
 import React, {useState} from 'react';
+import axios from 'axios';
 
-export default function SearchBar() {
+export default function SearchBar({onSearch}) {
     const [query, setQuery] = useState('');
     
     const handleSearch = () => {
         if (query.trim()) {
             console.log('Searching for:', query);
+            axios.get('http://localhost:8000/search', {
+                params: {
+                    query: query
+                }
+            })
+            .then(response => {
+                console.log(response.data);
+                onSearch(response.data);
+            })
+            .catch(error => console.error('ERROR:', error));
         }
     }
 

@@ -1,8 +1,15 @@
+import { useState } from "react";
 import SearchBar from "../../components/search-bar";
 import UrlCard from "../../components/url-card";
 import './index.css';
 
 export default function SearchPage() {
+    const [results, setResults] = useState([]);
+
+    const handleSearchResults = (data) => {
+        setResults(data);
+    };
+
     const urlCards = Array.from({ length: 10 }, (_, index) => (
         <UrlCard key={index} />
     ));
@@ -13,7 +20,7 @@ export default function SearchPage() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 ms-3">
-                            <SearchBar />
+                            <SearchBar onSearch={handleSearchResults}/>
                         </div>
                     </div>
                 </div>
@@ -22,7 +29,9 @@ export default function SearchPage() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-8 ms-3">
-                        {urlCards}
+                        {results.map((result) => (
+                            <UrlCard />
+                        ))}
                     </div>
                     <div className="col-md-4">
                         {/* Empty for now */}
