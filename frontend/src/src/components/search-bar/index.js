@@ -14,8 +14,7 @@ export default function SearchBar({onSearch}) {
                 }
             })
             .then(response => {
-                console.log(response.data);
-                onSearch(response.data);
+                onSearch(response.data.results);
             })
             .catch(error => console.error('ERROR:', error));
         }
