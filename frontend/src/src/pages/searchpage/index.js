@@ -30,7 +30,11 @@ export default function SearchPage() {
                 <div className="row">
                     <div className="col-md-8 ms-3">
                         {results.map((result) => (
-                            <UrlCard />
+                            <UrlCard 
+                                url={result.url}
+                                title={result.title}
+                                content={result.content}
+                            />
                         ))}
                     </div>
                     <div className="col-md-4">
