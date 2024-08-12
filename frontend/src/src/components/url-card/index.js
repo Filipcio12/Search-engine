@@ -14,7 +14,7 @@ export default function UrlCard({
     }, []);
 
     return (
-        <div className="card" style={{ width: '24rem', backgroundColor: 'transparent', border: 'none' }}>
+        <div className="card" style={{ width: '37rem', backgroundColor: 'transparent', border: 'none' }}>
             <div className="card-body">
                 <div className="d-flex align-items-center mb-3">
                     <img src={favicon} alt="Logo" className="card-logo me-2" />
