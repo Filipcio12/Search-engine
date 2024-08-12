@@ -1,10 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SearchBar from "../../components/search-bar";
 import UrlCard from "../../components/url-card";
 import './index.css';
+import axios from 'axios';
+import { useLocation } from "react-router-dom";
 
 export default function SearchPage() {
     const [results, setResults] = useState([]);
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const query = queryParams.get('query');
+
+    useEffect(() => {
+        if (query.trim()) {
+            console.log('Searching for:', query);
+            axios.get('http://localhost:8000/search', {
+                params: {
+                    query: query
+                }
+            })
+            .then(response => {
+                setResults(response.data.results);
+            })
+            .catch(error => console.error('ERROR:', error));
+        }
+    }, [query]);
 
     return (
         <div>
@@ -12,7 +32,7 @@ export default function SearchPage() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 ms-3">
-                            <SearchBar onSearch={setResults}/>
+                            <SearchBar />
                         </div>
                     </div>
                 </div>

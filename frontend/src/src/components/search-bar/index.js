@@ -1,23 +1,13 @@
 import './index.css';
 import React, {useState} from 'react';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-export default function SearchBar({onSearch}) {
+export default function SearchBar() {
     const [query, setQuery] = useState('');
-    
+    const navigate = useNavigate();
+
     const handleSearch = () => {
-        if (query.trim()) {
-            console.log('Searching for:', query);
-            axios.get('http://localhost:8000/search', {
-                params: {
-                    query: query
-                }
-            })
-            .then(response => {
-                onSearch(response.data.results);
-            })
-            .catch(error => console.error('ERROR:', error));
-        }
+        navigate('/search/?query=' + encodeURIComponent(query))
     }
 
     const handleKeyPress = (event) => {
