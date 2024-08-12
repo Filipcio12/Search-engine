@@ -7,6 +7,7 @@ import { useLocation } from "react-router-dom";
 
 export default function SearchPage() {
     const [results, setResults] = useState([]);
+    const [error, setError] = useState(null);
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const query = queryParams.get('query');
@@ -21,8 +22,12 @@ export default function SearchPage() {
             })
             .then(response => {
                 setResults(response.data.results);
+                setError(null);
             })
-            .catch(error => console.error('ERROR:', error));
+            .catch(error => {
+                console.error('ERROR:', error);
+                setError('An error occurred while fetching the search results. Please try again later :(');
+            });
         }
     }, [query]);
 
@@ -41,13 +46,19 @@ export default function SearchPage() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-8 ms-3">
-                        {results.map((result) => (
-                            <UrlCard 
-                                url={result.url}
-                                title={result.title}
-                                content={result.content}
-                            />
-                        ))}
+                    {error ? (
+                            <div className="alert alert-danger" role="alert">
+                                {error}
+                            </div>
+                        ) : (
+                            results.map((result) => (
+                                <UrlCard 
+                                    url={result.url}
+                                    title={result.title}
+                                    content={result.content}
+                                />
+                            ))
+                        )}
                     </div>
                     <div className="col-md-4">
                         {/* Empty for now */}
