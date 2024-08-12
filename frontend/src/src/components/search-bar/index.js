@@ -2,8 +2,8 @@ import './index.css';
 import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function SearchBar() {
-    const [query, setQuery] = useState('');
+export default function SearchBar({searchField}) {
+    const [query, setQuery] = useState(searchField);
     const navigate = useNavigate();
 
     const handleSearch = () => {

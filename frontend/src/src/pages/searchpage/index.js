@@ -32,7 +32,7 @@ export default function SearchPage() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 ms-3">
-                            <SearchBar />
+                            <SearchBar searchField={query}/>
                         </div>
                     </div>
                 </div>
