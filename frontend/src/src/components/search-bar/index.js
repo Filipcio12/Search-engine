@@ -7,7 +7,12 @@ export default function SearchBar({searchField}) {
     const navigate = useNavigate();
 
     const handleSearch = () => {
-        navigate('/search/?query=' + encodeURIComponent(query))
+        const newURL = '/search/?query=' + encodeURIComponent(query);
+        if (window.location.pathname + window.location.search !== newURL) {
+            navigate(newURL);
+        } else {
+            window.location.reload();
+        }
     }
 
     const handleKeyPress = (event) => {
