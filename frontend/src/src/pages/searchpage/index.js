@@ -14,6 +14,7 @@ export default function SearchPage() {
 
     useEffect(() => {
         if (query.trim()) {
+            document.title = query + ' at ChopChopGo';
             console.log('Searching for:', query);
             axios.get('http://localhost:8000/search', {
                 params: {
@@ -28,6 +29,8 @@ export default function SearchPage() {
                 console.error('ERROR:', error);
                 setError('An error occurred while fetching the search results. Please try again later :(');
             });
+        } else {
+            document.title = 'ChopChopGo';
         }
     }, [query]);
 
