@@ -51,5 +51,8 @@ python manage.py crawl https://www.britannica.com/summary/Bobby-Fischer 1
 python manage.py crawl https://www.britannica.com/summary/Nobel-Prize 1
 python manage.py crawl https://www.britannica.com/summary/William-Shakespeare 1
 python manage.py crawl https://www.britannica.com/summary/Frederic-Chopin 1
-
+python manage.py index
+python manage.py runserver
 ```
+
+I chose Britannica's summary articles for their brevity and the limited number of links which were also relevant. I used depth one to quickly gather some pages for this example. 
