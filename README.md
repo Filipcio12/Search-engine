@@ -23,8 +23,8 @@ Crawl command is used in the following way:
 ```
 python manage.py crawl <url> <depth> [--parallel]
 ```
-* <url>: replace with URL you wish to start crawling from
-* <depth>: specifies the number of levels of URLs to follow
+* url: replace with URL you wish to start crawling from
+* depth: specifies the number of levels of URLs to follow
 * --parallel (optional): include this flag if you want to enable parallel crawling. It only works with databases which support concurrent connections like PostgreSQL and does not work with SQLite.
 
 ## Indexing
@@ -44,3 +44,12 @@ python manage.py index
 When index command is used, the indexer indexes all the pages in the database and then it is saved in the backend/src/index_data directory as index_data.plk file using the pickle library. The saved Indexer class is loaded by the IndexerConfig when the server starts running. That saved Indexer class is then later used by the SearchIndexerView to allow clients to search through the database on the /search endpoint.
 
 ## Use case
+For this example use case I used the following commands:
+```
+python manage.py crawl https://www.britannica.com/summary/Michael-Jackson 1
+python manage.py crawl https://www.britannica.com/summary/Bobby-Fischer 1
+python manage.py crawl https://www.britannica.com/summary/Nobel-Prize 1
+python manage.py crawl https://www.britannica.com/summary/William-Shakespeare 1
+python manage.py crawl https://www.britannica.com/summary/Frederic-Chopin 1
+
+```
