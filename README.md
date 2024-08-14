@@ -55,4 +55,8 @@ python manage.py index
 python manage.py runserver
 ```
 
-I chose Britannica's summary articles for their brevity and the limited number of links which were also relevant. I used depth one to quickly gather some pages for this example. 
+I chose Britannica's summary articles for their brevity and the limited number of links which were also relevant. I used depth one to quickly gather some pages for this example.
+![Screenshot from 2024-08-14 16-52-31](https://github.com/user-attachments/assets/876f1e2b-5763-4f97-bf89-3a0cb9ff7026)
+![Screenshot from 2024-08-14 16-53-04](https://github.com/user-attachments/assets/19b91a0d-bdca-43ca-a5e0-2c8b1eb43acd)
+![Screenshot from 2024-08-14 16-53-56](https://github.com/user-attachments/assets/27542404-e692-4ade-992a-ba65b0f459c3)
+![Screenshot from 2024-08-14 16-53-33](https://github.com/user-attachments/assets/9d355f59-8f3b-4f59-9508-4e433273e9bb)
